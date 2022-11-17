@@ -1,0 +1,56 @@
+.carrousel-container {
+
+    position: relative;
+    --arrow-width: 50px;
+    --carrousel-item-aspect-ratio: 1/1;
+    --carrousel-item-in-row: 5;
+    --carrousel-item-gap: 10px;
+    --carrousel-page: 1;
+    overflow: hidden;
+    border-radius: var(--small-border-radius);
+
+    .arrows-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+
+        button {
+            height: 100%;
+            width: var(--arrow-width);
+            position: relative;
+            z-index: 100;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: var(--small-border-radius);
+            color: white;
+
+            &:disabled,
+            &:disabled:hover {
+                opacity: 0.2;
+                background-color: rgba(0, 0, 0, 0.4);
+                pointer-events: none;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+
+    .carrousel {
+        display: flex;
+        gap: var(--carrousel-item-gap);
+        // transform: translateX(calc(((var(--carrousel-page) * 100%) + var(--arrow-width) + var(--carrousel-item-gap)) * -1));
+        transform: translateX(calc(var(--arrow-width) + var(--carrousel-item-gap) - ((var(--carrousel-page) * (100% - (var(--arrow-width) * 2) - var(--carrousel-item-gap))))));
+        transition: transform var(--animation-duration) var(--animation-timing-curve);
+
+        &>* {
+            width: calc((100% - (2 * var(--arrow-width)) - ((var(--carrousel-item-in-row) + 1) * var(--carrousel-item-gap))) / var(--carrousel-item-in-row));
+            aspect-ratio: var(--carrousel-item-aspect-ratio);
+            flex-shrink: 0;
+        }
+
+    }
+}

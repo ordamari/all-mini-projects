@@ -1,0 +1,44 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+@import "setup/animations.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+
+// Components
+@import "components/header.scss";
+@import "components/sidebar.scss";
+@import "components/labels.scss";
+@import "components/context-menu.scss";
+@import "components/dropdown.scss";
+@import "components/table";
+@import "components/notifications.scss";
+@import "components/popup.scss";
+@import "components/select.scss";
+@import "components/calander.scss";
+@import "components/time.scss";
+@import "components/search-input.scss";
+@import "components/video-player.scss";
+@import "components/carrousel.scss";
+@import "components/imagePicker.scss";
+@import "components/radio-button.scss";
+@import "components/range-picker.scss";
+@import "components/accordion.scss";
+@import "components/styled-scrollbar.scss";
+
+//pages 
+@import "pages/home/home.scss";
+@import "pages/carrousel-page.scss";
+@import "pages/context-menu-page.scss";
+@import "pages/dropdown-page.scss";
+@import "pages/infinity-scroll-page.scss";
+@import "pages/popup-page.scss";
+@import "pages/toastr-notifications-page.scss";
+@import "pages/styled-scrollbar-page.scss";
+
+@import "pages/controls-pages/controls-pages.scss";
+@import "pages/apps-pages/apps-pages.scss";

@@ -1,0 +1,25 @@
+.toastr-notifications-page {
+
+    .button {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+
+        &.error {
+            background-color: var(--error);
+        }
+
+        &.warning {
+            background-color: var(--warning);
+        }
+
+        &.success {
+            background-color: var(--success);
+        }
+
+        &.info {
+            background-color: var(--info);
+        }
+    }
+
+}

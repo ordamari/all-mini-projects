@@ -1,0 +1,11 @@
+.dropdown-page {
+
+    position: relative;
+
+    .bottom-menus {
+        position: absolute;
+        bottom: 12px;
+        width: calc(100% - 24px);
+    }
+
+}

@@ -1,0 +1,39 @@
+.context-menu-container {
+    // transform: translateX(-100%);
+    position: fixed;
+    padding: 9px 0;
+    max-width: 340px;
+    min-width: 200px;
+    background-color: var(--background-color);
+    box-shadow: var(--dark-box-shadow);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-radius: var(--small-border-radius);
+    animation-name: show;
+    animation-duration: 150ms;
+
+
+
+    .menu-item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 14.5px;
+        width: 100%;
+        padding: 10px 10px;
+        text-align: start;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+@keyframes show {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}

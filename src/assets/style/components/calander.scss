@@ -1,0 +1,86 @@
+.calander {
+    width: max-content;
+
+    button {
+        border: none;
+        background-color: transparent;
+    }
+
+    .month-change {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+
+        .selected-month {
+            cursor: default;
+            font-weight: var(--bold);
+            text-align: center;
+        }
+    }
+
+    .week-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-transform: uppercase;
+        font-weight: var(--bold);
+        font-size: 12px;
+
+        .week-day {
+            text-align: center;
+            padding: 6px;
+        }
+    }
+
+    .calender-days {
+        .month-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+
+            .prev-month-day,
+            .next-month-day,
+            .this-month-day {
+                text-align: center;
+                color: var(--dark-grey);
+                padding: 12px;
+                position: relative;
+
+
+                &.today::before {
+                    content: '';
+                    position: absolute;
+                    width: 70%;
+                    height: 2px;
+                    left: 15%;
+                    bottom: 3px;
+                    background-color: var(--primary-color);
+                }
+
+                &:hover,
+                &.hovered {
+                    background-color: var(--primary-color-opacity);
+                }
+
+                &.selected {
+                    background-color: var(--primary-color);
+                    color: var(--lightest-grey);
+
+                    &.today::before {
+                        content: '';
+                        position: absolute;
+                        width: 70%;
+                        height: 2px;
+                        left: 15%;
+                        bottom: 3px;
+                        background-color: var(--lightest-grey);
+                    }
+
+
+                }
+            }
+
+            .prev-month-day,
+            .next-month-day {
+                color: var(--light-grey);
+            }
+        }
+    }
+}

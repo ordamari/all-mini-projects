@@ -1,0 +1,52 @@
+.notifications-container {
+    position: fixed;
+    z-index: 10;
+    right: 10px;
+    top: calc(var(--header-height) + 10px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .notification {
+        padding: 1rem;
+        color: var(--lightest-grey);
+        border-radius: var(--small-border-radius);
+        width: 300px;
+        box-shadow: var(--dark-box-shadow);
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+
+        svg {
+            color: var(--lightest-color);
+            font-size: 2rem;
+            margin-top: 4px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .title {
+                font-weight: var(--bold);
+            }
+        }
+
+        &.error {
+            background-color: var(--error);
+        }
+
+        &.warning {
+            background-color: var(--warning);
+        }
+
+        &.success {
+            background-color: var(--success);
+        }
+
+        &.info {
+            background-color: var(--info);
+        }
+    }
+}

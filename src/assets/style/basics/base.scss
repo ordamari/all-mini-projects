@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-family: OpenSans-Regular, sans-serif;
+    height: 100%;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+body,
+#root,
+.App {
+    height: 100%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--dark-grey);
+}

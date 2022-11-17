@@ -1,0 +1,82 @@
+.styled-scrollbar {
+
+    --scrollbar-width: 10px;
+    --track-height: 10%;
+    --scroll-top: 0%;
+    position: relative;
+    height: 100%;
+
+    &.scrollbar-show {
+        margin-right: calc(var(--scrollbar-width) * 1.2);
+
+        .scrollbar {
+            display: block;
+        }
+    }
+
+
+
+
+    .children {
+        height: 100%;
+        overflow: scroll;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+        }
+    }
+
+
+    .scrollbar {
+        width: var(--scrollbar-width);
+        height: 100%;
+        position: absolute;
+        background-color: rgba(206, 206, 206, 0.3);
+        top: 0;
+        right: calc(var(--scrollbar-width) * -1.2);
+        transition: all var(--animation-duration) var(--animation-timing-curve);
+        border-radius: 999px;
+        display: none;
+
+
+        .track {
+            border-radius: 999px;
+            position: relative;
+            width: 100%;
+            top: var(--scroll-top);
+            height: var(--track-height);
+            background-color: rgba(206, 206, 206, 0.7);
+
+        }
+
+        &:hover {
+            background-color: rgba(206, 206, 206, 0.5);
+
+            width: calc(var(--scrollbar-width) * 1.2);
+
+            .track {
+                background-color: rgba(206, 206, 206, 1);
+            }
+
+        }
+    }
+
+
+}

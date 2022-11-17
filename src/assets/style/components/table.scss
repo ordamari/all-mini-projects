@@ -1,0 +1,194 @@
+.table-container {
+    border-radius: var(--small-border-radius);
+    background-color: var(--background-color);
+    box-shadow: var(--dark-box-shadow);
+    border-radius: var(--small-border-radius);
+
+    table.table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: none;
+        display: table;
+        // border: 1px solid var(--light-grey);
+
+        thead {
+            background-color: var(--primary-color);
+            color: var(--lightest-grey);
+            border-radius: var(--small-border-radius);
+
+            tr {
+                border-radius: var(--small-border-radius);
+            }
+
+            th:first-child {
+                border-top-left-radius: var(--small-border-radius);
+            }
+
+            th:last-child {
+                border-top-right-radius: var(--small-border-radius);
+            }
+
+            th {
+                text-align: left;
+                border-bottom: 1px solid var(--border-bottom);
+                padding: 11px 8px;
+
+                .arrow-button-container {
+                    button {
+                        width: 20px;
+                        height: 11px;
+                        background-color: transparent;
+                        border: none;
+                        color: var(--lightest-grey);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &.curr {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        tr {
+            td {
+                padding: 0 16px;
+                display: table-cell;
+                text-transform: capitalize;
+                height: 40px;
+                text-align: start;
+                padding: 8px;
+            }
+
+            &:not(:first-child) {
+                td {
+                    border-top: 1px solid var(--table-border-color);
+                }
+            }
+        }
+
+        tr:last-child {
+            border-bottom-right-radius: var(--small-border-radius);
+            border-bottom-left-radius: var(--small-border-radius);
+
+            td:first-child {
+                border-bottom-left-radius: var(--small-border-radius);
+
+            }
+
+            td:last-child {
+                border-bottom-right-radius: var(--small-border-radius);
+            }
+        }
+
+        .options {
+
+            button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px 0 0;
+                aspect-ratio: 1/1;
+                width: 35px;
+                font-size: 15px;
+            }
+        }
+
+        tbody {
+            tr:nth-child(2n) {
+                background-color: var(--lightest-grey);
+            }
+        }
+
+        .loader {
+            // width: 50px;
+            // height: 50px;
+        }
+
+    }
+
+    .paginator {
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: var(--background-color);
+        border-bottom-left-radius: var(--small-border-radius);
+        border-bottom-right-radius: var(--small-border-radius);
+
+        span {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+
+        .page {
+            border-radius: var(--small-border-radius);
+            background-color: var(--primary-color);
+            padding: 5px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--lightest-grey);
+            margin: 0;
+            cursor: pointer;
+
+            &.curr {
+                font-weight: var(--bold);
+                transform: scale(1.2);
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .table-container table.table {
+        border: 0;
+
+        thead {
+            display: none;
+        }
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            td {
+                border-bottom: 1px solid #ddd;
+                width: 100%;
+                display: block;
+                text-align: right;
+
+                &::before {
+                    /*
+                  * aria-label has no advantage, it won't be read inside a table
+                  content: attr(aria-label);
+                  */
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: var(--bold);
+
+                }
+            }
+
+
+        }
+
+    }
+
+
+
+
+    table td table td:last-child {
+        border-bottom: 0;
+    }
+}

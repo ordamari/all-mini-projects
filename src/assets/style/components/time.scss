@@ -1,0 +1,37 @@
+.time {
+    width: 100px;
+
+    span {
+        font-size: 20px;
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .hour,
+    .minute {
+        width: 100%;
+
+        button {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 5px 0;
+            border-radius: var(--small-border-radius);
+
+            &:hover,
+            &:focus {
+                box-shadow: var(--dark-box-shadow);
+            }
+
+            svg {
+                color: var(--lightest-grey);
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.time-picker .dropdown-container .dropdown {
+    min-width: unset;
+    padding: 9px;
+
+}
